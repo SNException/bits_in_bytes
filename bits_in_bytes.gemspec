@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["thexsalkin@gmail.com"]
 
   spec.summary       = "Gem to determine which bits are set in a byte"
-  spec.description   = "Gem which allows the user to determine which bits are set in a decimal byte value"
+  spec.description   = "Gem which allows the user to determine which bits are set inside a byte value"
   spec.homepage      = "https://github.com/SNException/bits_in_bytes"
   spec.license       = "MIT"
 

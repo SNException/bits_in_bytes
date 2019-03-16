@@ -22,16 +22,20 @@ Or install it yourself as:
 ## Usage
 
 You can use the 'BitInByte' object to find out which bits are set in a given
-byte. The first argument is the position of the bit you would like to check,
-starting with the index value one. The second argument is the decimal byte value, which must not
-be bigger than 255.
+byte. The first argument is the position of the bit you would like to check.
+The position must be in the range of 1 to 8.
+The second argument is the actual byte value, which must be in the 
+range of 0 to 255. It may be a decimal, hex, octal or binary value.
 
 Simple examples:
 ```ruby
-puts BitInByte.new(8, 128).value # output -> true
-puts BitInByte.new(4, 8).value # output -> false
-puts BitInByte.new(1, 17).value # output -> true
-puts BitInByte.new(3, 64).value # output -> false
+BitInByte.new(8, 128).value # output -> true
+BitInByte.new(4, 8).value # output -> false
+BitInByte.new(1, 17).value # output -> true
+BitInByte.new(3, 64).value # output -> false
+BitInByte.new(5, 0x10).value # output -> true
+BitInByte.new(7, 0b00000011).value # output -> false
+BitInByte.new(2, 0o12).value # output -> true
 ```
 
 ## Development

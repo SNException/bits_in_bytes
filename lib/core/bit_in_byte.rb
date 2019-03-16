@@ -19,6 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+
+# The BitInByte object represents a single bit inside a byte value.
+# He accepts a postion of himself which must be in the range
+# of 1-8 and the actualbyte value which must be in the range of 0-255. 
+# The byte value may be decimal, hex, octal, or binary.
+#
+# author:: Niklas Schultz
+# version:: 0.1.2
+# license:: MIT
 class BitInByte
   def initialize(pos, byte)
     @pos = pos
@@ -26,8 +35,8 @@ class BitInByte
   end
 
   def value
-    raise ArgumentError, 'pos must 1-8' if @pos <= 0 || @pos > 8
-    raise ArgumentError, 'byte must 0-255' if @byte < 0 || @byte > 255
+    raise ArgumentError, 'pos must be 1-8' if @pos <= 0 || @pos > 8
+    raise ArgumentError, 'byte must be 0-255' if @byte < 0 || @byte > 255
 
     position = @pos - 1
     ((1 << position) & @byte) != 0
