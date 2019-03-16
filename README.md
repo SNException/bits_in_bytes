@@ -30,7 +30,7 @@ range of 0 to 255. It may be a decimal, hex, octal or binary value.
 Simple examples:
 ```ruby
 BitInByte.new(8, 128).value # output -> true
-BitInByte.new(4, 8).value # output -> false
+BitInByte.new(4, 4).value # output -> false
 BitInByte.new(1, 17).value # output -> true
 BitInByte.new(3, 64).value # output -> false
 BitInByte.new(5, 0x10).value # output -> true
